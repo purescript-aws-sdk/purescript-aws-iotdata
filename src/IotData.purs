@@ -20,27 +20,33 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "IotData" :: String
-
 
 -- | <p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>
 deleteThingShadow :: forall eff. DeleteThingShadowRequest -> Aff (exception :: EXCEPTION | eff) DeleteThingShadowResponse
-deleteThingShadow = Request.request serviceName "deleteThingShadow" 
+deleteThingShadow = Request.request service method  where
+    service = Request.ServiceName "IotData"
+    method = Request.MethodName "deleteThingShadow"
 
 
 -- | <p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>
 getThingShadow :: forall eff. GetThingShadowRequest -> Aff (exception :: EXCEPTION | eff) GetThingShadowResponse
-getThingShadow = Request.request serviceName "getThingShadow" 
+getThingShadow = Request.request service method  where
+    service = Request.ServiceName "IotData"
+    method = Request.MethodName "getThingShadow"
 
 
 -- | <p>Publishes state information.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>
 publish :: forall eff. PublishRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-publish = Request.request serviceName "publish" 
+publish = Request.request service method  where
+    service = Request.ServiceName "IotData"
+    method = Request.MethodName "publish"
 
 
 -- | <p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>
 updateThingShadow :: forall eff. UpdateThingShadowRequest -> Aff (exception :: EXCEPTION | eff) UpdateThingShadowResponse
-updateThingShadow = Request.request serviceName "updateThingShadow" 
+updateThingShadow = Request.request service method  where
+    service = Request.ServiceName "IotData"
+    method = Request.MethodName "updateThingShadow"
 
 
 -- | <p>The specified version does not match the version of the document.</p>
