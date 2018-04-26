@@ -19,7 +19,7 @@ getThingShadow :: forall eff. Service -> GetThingShadowRequest -> Aff (exception
 #### `publish`
 
 ``` purescript
-publish :: forall eff. Service -> PublishRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+publish :: forall eff. Service -> PublishRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Publishes state information.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>

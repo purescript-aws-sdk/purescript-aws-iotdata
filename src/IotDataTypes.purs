@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>The specified version does not match the version of the document.</p>
 newtype ConflictException = ConflictException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeConflictException :: Newtype ConflictException _
 derive instance repGenericConflictException :: Generic ConflictException _
@@ -30,12 +29,12 @@ instance encodeConflictException :: Encode ConflictException where encode = gene
 
 -- | Constructs ConflictException from required parameters
 newConflictException :: ConflictException
-newConflictException  = ConflictException { "message": (NullOrUndefined Nothing) }
+newConflictException  = ConflictException { "message": Nothing }
 
 -- | Constructs ConflictException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConflictException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> ConflictException
-newConflictException'  customize = (ConflictException <<< customize) { "message": (NullOrUndefined Nothing) }
+newConflictException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> ConflictException
+newConflictException'  customize = (ConflictException <<< customize) { "message": Nothing }
 
 
 
@@ -113,7 +112,7 @@ newGetThingShadowRequest' _thingName customize = (GetThingShadowRequest <<< cust
 
 -- | <p>The output from the GetThingShadow operation.</p>
 newtype GetThingShadowResponse = GetThingShadowResponse 
-  { "payload" :: NullOrUndefined (JsonDocument)
+  { "payload" :: Maybe (JsonDocument)
   }
 derive instance newtypeGetThingShadowResponse :: Newtype GetThingShadowResponse _
 derive instance repGenericGetThingShadowResponse :: Generic GetThingShadowResponse _
@@ -123,18 +122,18 @@ instance encodeGetThingShadowResponse :: Encode GetThingShadowResponse where enc
 
 -- | Constructs GetThingShadowResponse from required parameters
 newGetThingShadowResponse :: GetThingShadowResponse
-newGetThingShadowResponse  = GetThingShadowResponse { "payload": (NullOrUndefined Nothing) }
+newGetThingShadowResponse  = GetThingShadowResponse { "payload": Nothing }
 
 -- | Constructs GetThingShadowResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetThingShadowResponse' :: ( { "payload" :: NullOrUndefined (JsonDocument) } -> {"payload" :: NullOrUndefined (JsonDocument) } ) -> GetThingShadowResponse
-newGetThingShadowResponse'  customize = (GetThingShadowResponse <<< customize) { "payload": (NullOrUndefined Nothing) }
+newGetThingShadowResponse' :: ( { "payload" :: Maybe (JsonDocument) } -> {"payload" :: Maybe (JsonDocument) } ) -> GetThingShadowResponse
+newGetThingShadowResponse'  customize = (GetThingShadowResponse <<< customize) { "payload": Nothing }
 
 
 
 -- | <p>An unexpected error has occurred.</p>
 newtype InternalFailureException = InternalFailureException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInternalFailureException :: Newtype InternalFailureException _
 derive instance repGenericInternalFailureException :: Generic InternalFailureException _
@@ -144,18 +143,18 @@ instance encodeInternalFailureException :: Encode InternalFailureException where
 
 -- | Constructs InternalFailureException from required parameters
 newInternalFailureException :: InternalFailureException
-newInternalFailureException  = InternalFailureException { "message": (NullOrUndefined Nothing) }
+newInternalFailureException  = InternalFailureException { "message": Nothing }
 
 -- | Constructs InternalFailureException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalFailureException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InternalFailureException
-newInternalFailureException'  customize = (InternalFailureException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalFailureException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InternalFailureException
+newInternalFailureException'  customize = (InternalFailureException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The request is not valid.</p>
 newtype InvalidRequestException = InvalidRequestException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidRequestException :: Newtype InvalidRequestException _
 derive instance repGenericInvalidRequestException :: Generic InvalidRequestException _
@@ -165,12 +164,12 @@ instance encodeInvalidRequestException :: Encode InvalidRequestException where e
 
 -- | Constructs InvalidRequestException from required parameters
 newInvalidRequestException :: InvalidRequestException
-newInvalidRequestException  = InvalidRequestException { "message": (NullOrUndefined Nothing) }
+newInvalidRequestException  = InvalidRequestException { "message": Nothing }
 
 -- | Constructs InvalidRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidRequestException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidRequestException
-newInvalidRequestException'  customize = (InvalidRequestException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidRequestException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidRequestException
+newInvalidRequestException'  customize = (InvalidRequestException <<< customize) { "message": Nothing }
 
 
 
@@ -185,7 +184,7 @@ instance encodeJsonDocument :: Encode JsonDocument where encode = genericEncode 
 
 -- | <p>The specified combination of HTTP verb and URI is not supported.</p>
 newtype MethodNotAllowedException = MethodNotAllowedException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeMethodNotAllowedException :: Newtype MethodNotAllowedException _
 derive instance repGenericMethodNotAllowedException :: Generic MethodNotAllowedException _
@@ -195,12 +194,12 @@ instance encodeMethodNotAllowedException :: Encode MethodNotAllowedException whe
 
 -- | Constructs MethodNotAllowedException from required parameters
 newMethodNotAllowedException :: MethodNotAllowedException
-newMethodNotAllowedException  = MethodNotAllowedException { "message": (NullOrUndefined Nothing) }
+newMethodNotAllowedException  = MethodNotAllowedException { "message": Nothing }
 
 -- | Constructs MethodNotAllowedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMethodNotAllowedException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> MethodNotAllowedException
-newMethodNotAllowedException'  customize = (MethodNotAllowedException <<< customize) { "message": (NullOrUndefined Nothing) }
+newMethodNotAllowedException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> MethodNotAllowedException
+newMethodNotAllowedException'  customize = (MethodNotAllowedException <<< customize) { "message": Nothing }
 
 
 
@@ -216,8 +215,8 @@ instance encodePayload :: Encode Payload where encode = genericEncode options
 -- | <p>The input for the Publish operation.</p>
 newtype PublishRequest = PublishRequest 
   { "topic" :: (Topic)
-  , "qos" :: NullOrUndefined (Qos)
-  , "payload" :: NullOrUndefined (Payload)
+  , "qos" :: Maybe (Qos)
+  , "payload" :: Maybe (Payload)
   }
 derive instance newtypePublishRequest :: Newtype PublishRequest _
 derive instance repGenericPublishRequest :: Generic PublishRequest _
@@ -227,12 +226,12 @@ instance encodePublishRequest :: Encode PublishRequest where encode = genericEnc
 
 -- | Constructs PublishRequest from required parameters
 newPublishRequest :: Topic -> PublishRequest
-newPublishRequest _topic = PublishRequest { "topic": _topic, "payload": (NullOrUndefined Nothing), "qos": (NullOrUndefined Nothing) }
+newPublishRequest _topic = PublishRequest { "topic": _topic, "payload": Nothing, "qos": Nothing }
 
 -- | Constructs PublishRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPublishRequest' :: Topic -> ( { "topic" :: (Topic) , "qos" :: NullOrUndefined (Qos) , "payload" :: NullOrUndefined (Payload) } -> {"topic" :: (Topic) , "qos" :: NullOrUndefined (Qos) , "payload" :: NullOrUndefined (Payload) } ) -> PublishRequest
-newPublishRequest' _topic customize = (PublishRequest <<< customize) { "topic": _topic, "payload": (NullOrUndefined Nothing), "qos": (NullOrUndefined Nothing) }
+newPublishRequest' :: Topic -> ( { "topic" :: (Topic) , "qos" :: Maybe (Qos) , "payload" :: Maybe (Payload) } -> {"topic" :: (Topic) , "qos" :: Maybe (Qos) , "payload" :: Maybe (Payload) } ) -> PublishRequest
+newPublishRequest' _topic customize = (PublishRequest <<< customize) { "topic": _topic, "payload": Nothing, "qos": Nothing }
 
 
 
@@ -247,7 +246,7 @@ instance encodeQos :: Encode Qos where encode = genericEncode options
 
 -- | <p>The payload exceeds the maximum size allowed.</p>
 newtype RequestEntityTooLargeException = RequestEntityTooLargeException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeRequestEntityTooLargeException :: Newtype RequestEntityTooLargeException _
 derive instance repGenericRequestEntityTooLargeException :: Generic RequestEntityTooLargeException _
@@ -257,18 +256,18 @@ instance encodeRequestEntityTooLargeException :: Encode RequestEntityTooLargeExc
 
 -- | Constructs RequestEntityTooLargeException from required parameters
 newRequestEntityTooLargeException :: RequestEntityTooLargeException
-newRequestEntityTooLargeException  = RequestEntityTooLargeException { "message": (NullOrUndefined Nothing) }
+newRequestEntityTooLargeException  = RequestEntityTooLargeException { "message": Nothing }
 
 -- | Constructs RequestEntityTooLargeException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRequestEntityTooLargeException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> RequestEntityTooLargeException
-newRequestEntityTooLargeException'  customize = (RequestEntityTooLargeException <<< customize) { "message": (NullOrUndefined Nothing) }
+newRequestEntityTooLargeException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> RequestEntityTooLargeException
+newRequestEntityTooLargeException'  customize = (RequestEntityTooLargeException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The specified resource does not exist.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -278,18 +277,18 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The service is temporarily unavailable.</p>
 newtype ServiceUnavailableException = ServiceUnavailableException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeServiceUnavailableException :: Newtype ServiceUnavailableException _
 derive instance repGenericServiceUnavailableException :: Generic ServiceUnavailableException _
@@ -299,12 +298,12 @@ instance encodeServiceUnavailableException :: Encode ServiceUnavailableException
 
 -- | Constructs ServiceUnavailableException from required parameters
 newServiceUnavailableException :: ServiceUnavailableException
-newServiceUnavailableException  = ServiceUnavailableException { "message": (NullOrUndefined Nothing) }
+newServiceUnavailableException  = ServiceUnavailableException { "message": Nothing }
 
 -- | Constructs ServiceUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceUnavailableException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ServiceUnavailableException
-newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "message": (NullOrUndefined Nothing) }
+newServiceUnavailableException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ServiceUnavailableException
+newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "message": Nothing }
 
 
 
@@ -319,7 +318,7 @@ instance encodeThingName :: Encode ThingName where encode = genericEncode option
 
 -- | <p>The rate exceeds the limit.</p>
 newtype ThrottlingException = ThrottlingException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeThrottlingException :: Newtype ThrottlingException _
 derive instance repGenericThrottlingException :: Generic ThrottlingException _
@@ -329,12 +328,12 @@ instance encodeThrottlingException :: Encode ThrottlingException where encode = 
 
 -- | Constructs ThrottlingException from required parameters
 newThrottlingException :: ThrottlingException
-newThrottlingException  = ThrottlingException { "message": (NullOrUndefined Nothing) }
+newThrottlingException  = ThrottlingException { "message": Nothing }
 
 -- | Constructs ThrottlingException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThrottlingException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ThrottlingException
-newThrottlingException'  customize = (ThrottlingException <<< customize) { "message": (NullOrUndefined Nothing) }
+newThrottlingException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ThrottlingException
+newThrottlingException'  customize = (ThrottlingException <<< customize) { "message": Nothing }
 
 
 
@@ -349,7 +348,7 @@ instance encodeTopic :: Encode Topic where encode = genericEncode options
 
 -- | <p>You are not authorized to perform this operation.</p>
 newtype UnauthorizedException = UnauthorizedException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeUnauthorizedException :: Newtype UnauthorizedException _
 derive instance repGenericUnauthorizedException :: Generic UnauthorizedException _
@@ -359,18 +358,18 @@ instance encodeUnauthorizedException :: Encode UnauthorizedException where encod
 
 -- | Constructs UnauthorizedException from required parameters
 newUnauthorizedException :: UnauthorizedException
-newUnauthorizedException  = UnauthorizedException { "message": (NullOrUndefined Nothing) }
+newUnauthorizedException  = UnauthorizedException { "message": Nothing }
 
 -- | Constructs UnauthorizedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnauthorizedException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> UnauthorizedException
-newUnauthorizedException'  customize = (UnauthorizedException <<< customize) { "message": (NullOrUndefined Nothing) }
+newUnauthorizedException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> UnauthorizedException
+newUnauthorizedException'  customize = (UnauthorizedException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The document encoding is not supported.</p>
 newtype UnsupportedDocumentEncodingException = UnsupportedDocumentEncodingException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeUnsupportedDocumentEncodingException :: Newtype UnsupportedDocumentEncodingException _
 derive instance repGenericUnsupportedDocumentEncodingException :: Generic UnsupportedDocumentEncodingException _
@@ -380,12 +379,12 @@ instance encodeUnsupportedDocumentEncodingException :: Encode UnsupportedDocumen
 
 -- | Constructs UnsupportedDocumentEncodingException from required parameters
 newUnsupportedDocumentEncodingException :: UnsupportedDocumentEncodingException
-newUnsupportedDocumentEncodingException  = UnsupportedDocumentEncodingException { "message": (NullOrUndefined Nothing) }
+newUnsupportedDocumentEncodingException  = UnsupportedDocumentEncodingException { "message": Nothing }
 
 -- | Constructs UnsupportedDocumentEncodingException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedDocumentEncodingException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> UnsupportedDocumentEncodingException
-newUnsupportedDocumentEncodingException'  customize = (UnsupportedDocumentEncodingException <<< customize) { "message": (NullOrUndefined Nothing) }
+newUnsupportedDocumentEncodingException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> UnsupportedDocumentEncodingException
+newUnsupportedDocumentEncodingException'  customize = (UnsupportedDocumentEncodingException <<< customize) { "message": Nothing }
 
 
 
@@ -413,7 +412,7 @@ newUpdateThingShadowRequest' _payload _thingName customize = (UpdateThingShadowR
 
 -- | <p>The output from the UpdateThingShadow operation.</p>
 newtype UpdateThingShadowResponse = UpdateThingShadowResponse 
-  { "payload" :: NullOrUndefined (JsonDocument)
+  { "payload" :: Maybe (JsonDocument)
   }
 derive instance newtypeUpdateThingShadowResponse :: Newtype UpdateThingShadowResponse _
 derive instance repGenericUpdateThingShadowResponse :: Generic UpdateThingShadowResponse _
@@ -423,12 +422,12 @@ instance encodeUpdateThingShadowResponse :: Encode UpdateThingShadowResponse whe
 
 -- | Constructs UpdateThingShadowResponse from required parameters
 newUpdateThingShadowResponse :: UpdateThingShadowResponse
-newUpdateThingShadowResponse  = UpdateThingShadowResponse { "payload": (NullOrUndefined Nothing) }
+newUpdateThingShadowResponse  = UpdateThingShadowResponse { "payload": Nothing }
 
 -- | Constructs UpdateThingShadowResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateThingShadowResponse' :: ( { "payload" :: NullOrUndefined (JsonDocument) } -> {"payload" :: NullOrUndefined (JsonDocument) } ) -> UpdateThingShadowResponse
-newUpdateThingShadowResponse'  customize = (UpdateThingShadowResponse <<< customize) { "payload": (NullOrUndefined Nothing) }
+newUpdateThingShadowResponse' :: ( { "payload" :: Maybe (JsonDocument) } -> {"payload" :: Maybe (JsonDocument) } ) -> UpdateThingShadowResponse
+newUpdateThingShadowResponse'  customize = (UpdateThingShadowResponse <<< customize) { "payload": Nothing }
 
 
 

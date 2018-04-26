@@ -25,7 +25,7 @@ getThingShadow (IotData.Service serviceImpl) = AWS.request serviceImpl method  w
 
 
 -- | <p>Publishes state information.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>
-publish :: forall eff. IotData.Service -> IotDataTypes.PublishRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+publish :: forall eff. IotData.Service -> IotDataTypes.PublishRequest -> Aff (exception :: EXCEPTION | eff) Unit
 publish (IotData.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "publish"
 

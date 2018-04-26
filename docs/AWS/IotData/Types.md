@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype ConflictException
-  = ConflictException { message :: NullOrUndefined (ErrorMessage) }
+  = ConflictException { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The specified version does not match the version of the document.</p>
@@ -35,7 +35,7 @@ Constructs ConflictException from required parameters
 #### `newConflictException'`
 
 ``` purescript
-newConflictException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> ConflictException
+newConflictException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> ConflictException
 ```
 
 Constructs ConflictException's fields from required parameters
@@ -162,7 +162,7 @@ Constructs GetThingShadowRequest's fields from required parameters
 
 ``` purescript
 newtype GetThingShadowResponse
-  = GetThingShadowResponse { payload :: NullOrUndefined (JsonDocument) }
+  = GetThingShadowResponse { payload :: Maybe (JsonDocument) }
 ```
 
 <p>The output from the GetThingShadow operation.</p>
@@ -187,7 +187,7 @@ Constructs GetThingShadowResponse from required parameters
 #### `newGetThingShadowResponse'`
 
 ``` purescript
-newGetThingShadowResponse' :: ({ payload :: NullOrUndefined (JsonDocument) } -> { payload :: NullOrUndefined (JsonDocument) }) -> GetThingShadowResponse
+newGetThingShadowResponse' :: ({ payload :: Maybe (JsonDocument) } -> { payload :: Maybe (JsonDocument) }) -> GetThingShadowResponse
 ```
 
 Constructs GetThingShadowResponse's fields from required parameters
@@ -196,7 +196,7 @@ Constructs GetThingShadowResponse's fields from required parameters
 
 ``` purescript
 newtype InternalFailureException
-  = InternalFailureException { message :: NullOrUndefined (ErrorMessage') }
+  = InternalFailureException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>An unexpected error has occurred.</p>
@@ -221,7 +221,7 @@ Constructs InternalFailureException from required parameters
 #### `newInternalFailureException'`
 
 ``` purescript
-newInternalFailureException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InternalFailureException
+newInternalFailureException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InternalFailureException
 ```
 
 Constructs InternalFailureException's fields from required parameters
@@ -230,7 +230,7 @@ Constructs InternalFailureException's fields from required parameters
 
 ``` purescript
 newtype InvalidRequestException
-  = InvalidRequestException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidRequestException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The request is not valid.</p>
@@ -255,7 +255,7 @@ Constructs InvalidRequestException from required parameters
 #### `newInvalidRequestException'`
 
 ``` purescript
-newInvalidRequestException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidRequestException
+newInvalidRequestException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidRequestException
 ```
 
 Constructs InvalidRequestException's fields from required parameters
@@ -280,7 +280,7 @@ Encode JsonDocument
 
 ``` purescript
 newtype MethodNotAllowedException
-  = MethodNotAllowedException { message :: NullOrUndefined (ErrorMessage) }
+  = MethodNotAllowedException { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The specified combination of HTTP verb and URI is not supported.</p>
@@ -305,7 +305,7 @@ Constructs MethodNotAllowedException from required parameters
 #### `newMethodNotAllowedException'`
 
 ``` purescript
-newMethodNotAllowedException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> MethodNotAllowedException
+newMethodNotAllowedException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> MethodNotAllowedException
 ```
 
 Constructs MethodNotAllowedException's fields from required parameters
@@ -330,7 +330,7 @@ Encode Payload
 
 ``` purescript
 newtype PublishRequest
-  = PublishRequest { topic :: Topic, qos :: NullOrUndefined (Qos), payload :: NullOrUndefined (Payload) }
+  = PublishRequest { topic :: Topic, qos :: Maybe (Qos), payload :: Maybe (Payload) }
 ```
 
 <p>The input for the Publish operation.</p>
@@ -355,7 +355,7 @@ Constructs PublishRequest from required parameters
 #### `newPublishRequest'`
 
 ``` purescript
-newPublishRequest' :: Topic -> ({ topic :: Topic, qos :: NullOrUndefined (Qos), payload :: NullOrUndefined (Payload) } -> { topic :: Topic, qos :: NullOrUndefined (Qos), payload :: NullOrUndefined (Payload) }) -> PublishRequest
+newPublishRequest' :: Topic -> ({ topic :: Topic, qos :: Maybe (Qos), payload :: Maybe (Payload) } -> { topic :: Topic, qos :: Maybe (Qos), payload :: Maybe (Payload) }) -> PublishRequest
 ```
 
 Constructs PublishRequest's fields from required parameters
@@ -380,7 +380,7 @@ Encode Qos
 
 ``` purescript
 newtype RequestEntityTooLargeException
-  = RequestEntityTooLargeException { message :: NullOrUndefined (ErrorMessage) }
+  = RequestEntityTooLargeException { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The payload exceeds the maximum size allowed.</p>
@@ -405,7 +405,7 @@ Constructs RequestEntityTooLargeException from required parameters
 #### `newRequestEntityTooLargeException'`
 
 ``` purescript
-newRequestEntityTooLargeException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> RequestEntityTooLargeException
+newRequestEntityTooLargeException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> RequestEntityTooLargeException
 ```
 
 Constructs RequestEntityTooLargeException's fields from required parameters
@@ -414,7 +414,7 @@ Constructs RequestEntityTooLargeException's fields from required parameters
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { message :: NullOrUndefined (ErrorMessage') }
+  = ResourceNotFoundException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The specified resource does not exist.</p>
@@ -439,7 +439,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -448,7 +448,7 @@ Constructs ResourceNotFoundException's fields from required parameters
 
 ``` purescript
 newtype ServiceUnavailableException
-  = ServiceUnavailableException { message :: NullOrUndefined (ErrorMessage') }
+  = ServiceUnavailableException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The service is temporarily unavailable.</p>
@@ -473,7 +473,7 @@ Constructs ServiceUnavailableException from required parameters
 #### `newServiceUnavailableException'`
 
 ``` purescript
-newServiceUnavailableException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ServiceUnavailableException
+newServiceUnavailableException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ServiceUnavailableException
 ```
 
 Constructs ServiceUnavailableException's fields from required parameters
@@ -498,7 +498,7 @@ Encode ThingName
 
 ``` purescript
 newtype ThrottlingException
-  = ThrottlingException { message :: NullOrUndefined (ErrorMessage') }
+  = ThrottlingException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The rate exceeds the limit.</p>
@@ -523,7 +523,7 @@ Constructs ThrottlingException from required parameters
 #### `newThrottlingException'`
 
 ``` purescript
-newThrottlingException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ThrottlingException
+newThrottlingException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ThrottlingException
 ```
 
 Constructs ThrottlingException's fields from required parameters
@@ -548,7 +548,7 @@ Encode Topic
 
 ``` purescript
 newtype UnauthorizedException
-  = UnauthorizedException { message :: NullOrUndefined (ErrorMessage') }
+  = UnauthorizedException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>You are not authorized to perform this operation.</p>
@@ -573,7 +573,7 @@ Constructs UnauthorizedException from required parameters
 #### `newUnauthorizedException'`
 
 ``` purescript
-newUnauthorizedException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> UnauthorizedException
+newUnauthorizedException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> UnauthorizedException
 ```
 
 Constructs UnauthorizedException's fields from required parameters
@@ -582,7 +582,7 @@ Constructs UnauthorizedException's fields from required parameters
 
 ``` purescript
 newtype UnsupportedDocumentEncodingException
-  = UnsupportedDocumentEncodingException { message :: NullOrUndefined (ErrorMessage') }
+  = UnsupportedDocumentEncodingException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The document encoding is not supported.</p>
@@ -607,7 +607,7 @@ Constructs UnsupportedDocumentEncodingException from required parameters
 #### `newUnsupportedDocumentEncodingException'`
 
 ``` purescript
-newUnsupportedDocumentEncodingException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> UnsupportedDocumentEncodingException
+newUnsupportedDocumentEncodingException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> UnsupportedDocumentEncodingException
 ```
 
 Constructs UnsupportedDocumentEncodingException's fields from required parameters
@@ -650,7 +650,7 @@ Constructs UpdateThingShadowRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateThingShadowResponse
-  = UpdateThingShadowResponse { payload :: NullOrUndefined (JsonDocument) }
+  = UpdateThingShadowResponse { payload :: Maybe (JsonDocument) }
 ```
 
 <p>The output from the UpdateThingShadow operation.</p>
@@ -675,7 +675,7 @@ Constructs UpdateThingShadowResponse from required parameters
 #### `newUpdateThingShadowResponse'`
 
 ``` purescript
-newUpdateThingShadowResponse' :: ({ payload :: NullOrUndefined (JsonDocument) } -> { payload :: NullOrUndefined (JsonDocument) }) -> UpdateThingShadowResponse
+newUpdateThingShadowResponse' :: ({ payload :: Maybe (JsonDocument) } -> { payload :: Maybe (JsonDocument) }) -> UpdateThingShadowResponse
 ```
 
 Constructs UpdateThingShadowResponse's fields from required parameters
